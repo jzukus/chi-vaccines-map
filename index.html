@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <title>Condom Distribution Site Finder</title>
+  <title>Vaccination Clinic Finder</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <!-- Import Mapbox GL JS -->
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
@@ -66,7 +66,7 @@
 
   <div id='map'></div>
   <div class='map-overlay' id='legend'></div>
-  <div class='map-overlay' id='features'><h2>Condom Distribution Site Finder</h2><div id='pd'><p>Enter an Address to Find Nearby Sites!</p></div></div>
+  <div class='map-overlay' id='features'><h2>Vaccination Clinic Finder</h2><div id='pd'><p>Enter an Address to Find Nearby Sites!</p></div></div>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoianp1a3VzIiwiYSI6ImNqdmQwbDRsdzIzbDE0ZW50emRyYmI5MXQifQ.MEFNUGjaMZCU7B0ogj05oQ'; // set the access token
 
@@ -114,8 +114,8 @@
       });
 
       // Add the legend to the map
-      var layers = ['Community Based Orgs (CBOs)', 'Clinics / Health Centers', 'Beauty / Barber Shops', 'Bars / Clubs', 'Other Venue Types'];
-      var colors = ['#008000', '#9ACD32', '#FF8C00', '#FF0000', '#FFFF00'];
+      var layers = ['City WIC', 'Pharmacy', 'MinuteClinic'];
+      var colors = ['#008000', '#0000FF', '#FF0000'];
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
         var color = colors[i];
@@ -154,18 +154,9 @@
           "circle-color": [ // Specify the color each circle should be
             'match', // Use the 'match' expression: https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
             ['get', 'VENUE_TYPE'], // Use the result 'VENUE_TYPE' property
-            'CBO', '#008000',
-            'Clinic', '#9ACD32',
-            'Health Center', '#9ACD32',
-            'CDPH Clinic', '#9ACD32',
-            'Clinic - Non-Funded', '#9ACD32',
-            'Bar/Club', '#FF0000',
-            'Bar', '#FF0000',
-            'Bar / Club', '#FF0000',
-            'Beauty/Barber Shop', '#FF8C00',
-            'Barbershop', '#FF8C00',
-            'Barber Shop', '#FF8C00',
-            'Beauty Shop', '#FF8C00',
+            'City WIC', '#008000',
+            'Pharmacy', '#0000FF',
+            'MinuteClinic', '#FF0000',
             '#FFFF00' // any other venue type
           ]
         }
