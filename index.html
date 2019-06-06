@@ -37,9 +37,9 @@
       padding: 10px;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       line-height: 18px;
-      height: 88px;
+      height: 55px;
       margin-bottom: 40px;
-      width: 225px;
+      width: 105px;
     }
 
     .legend-key {
@@ -54,7 +54,7 @@
       padding-left: 15px;
       padding-right: 15px;
       top: 0;
-      height: 140px;
+      height: 110px;
       margin-top: 20px;
       width: 270px;
     }
@@ -92,7 +92,7 @@
 
       geocoder.on('result', function(data) { // When the geocoder returns a result
         var point = data.result.center; // Capture the result coordinates
-        var tileset = 'jzukus.7syzf1h6'; // replace this with the ID of the tileset you created
+        var tileset = 'jzukus.dkpvqa11'; // replace this with the ID of the tileset you created
         var radius = 1609; // 1609 meters is roughly equal to one mile
         var limit = 50; // The maximum amount of results to return
         var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] + '.json?radius=' + radius + '&limit= ' + limit + ' &access_token=' + mapboxgl.accessToken;
