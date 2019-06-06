@@ -37,9 +37,9 @@
       padding: 10px;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       line-height: 18px;
-      height: 55px;
+      height: 72px;
       margin-bottom: 40px;
-      width: 105px;
+      width: 185px;
     }
 
     .legend-key {
@@ -92,7 +92,7 @@
 
       geocoder.on('result', function(data) { // When the geocoder returns a result
         var point = data.result.center; // Capture the result coordinates
-        var tileset = 'jzukus.dkpvqa11'; // replace this with the ID of the tileset you created
+        var tileset = 'jzukus.2m8kpjuq'; // replace this with the ID of the tileset you created
         var radius = 1609; // 1609 meters is roughly equal to one mile
         var limit = 50; // The maximum amount of results to return
         var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] + '.json?radius=' + radius + '&limit= ' + limit + ' &access_token=' + mapboxgl.accessToken;
@@ -114,8 +114,8 @@
       });
 
       // Add the legend to the map
-      var layers = ['City WIC', 'Pharmacy', 'MinuteClinic'];
-      var colors = ['#008000', '#0000FF', '#FF0000'];
+      var layers = ['City WIC', 'Community Health Clinic', 'Pharmacy', 'MinuteClinic'];
+      var colors = ['#008000', '#9ACD32', '#0000FF', '#FF0000'];
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
         var color = colors[i];
@@ -157,7 +157,7 @@
             'City WIC', '#008000',
             'Pharmacy', '#0000FF',
             'MinuteClinic', '#FF0000',
-            '#FFFF00' // any other venue type
+            '#9ACD32' // any other venue type (Community Health Clinics)
           ]
         }
       });
